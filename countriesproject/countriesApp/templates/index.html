@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>country Rest APIs</title>
+    <style>
+         h1{
+            color:#eb4034;
+         }
+         div{
+            background-color:#9fbfa7;
+            width:800px;
+            border-radius:10px;
+         }
+         .form{
+            color:#343aeb;
+            font-weight:bold;
+         }
+         button{
+            background-color:#0a4203;
+            color:white;
+            border-radius:10px;
+            border-width:1.5px;
+            border-color:red;
+            height:40px;
+            width:150px;
+         }
+         h3{
+            color:black;
+            padding-bottom:5px;
+         }
+         .flagimage{
+            width: calc(200px - 25px);
+            height:100px;
+            display: flex;
+            background-size: cover;
+            border-radius: 10px;
+            overflow: hidden;
+            padding-bottom:5px;
+            
+         }
+         
+         
+
+    </style>
+  </head>
+  <center>
+  <div> 
+  <body>
+
+<center>
+
+    <h1>Country Rest API</h1><hr>
+
+</center>
+   
+    <form class="form" method="POST">
+        {% csrf_token %}
+      
+         
+            <label for="country" required>Country Name:</label>
+            <input type="string" placeholder="Enter Country Name"  id="country" name="country" required><br><br>
+   
+            <button type="submit">Get details</button>
+
+            <h3 type="hidden">Country Name : {{resp.countryName}}</h3>
+            <h3>Population: {{resp.population}}</h3>
+            <h3>Continent: {{resp.Continent}}</h3>
+            <h3>Capital: {{resp.Capital}}</h3>
+            <h3>Languages: {{resp.Languages}}</h3>
+            <img src="{{resp.flag}}" class="flagimage">
+        
+        
+        </form>
+   </div>
